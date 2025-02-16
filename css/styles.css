@@ -41,6 +41,35 @@ button,
 
 html {
   scroll-padding-top: 70px;
+  scroll-behavior: smooth;
+}
+
+/* Ocultar la scrollbar pero permitir el scroll */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 11 */
+}
+
+/*lazy load*/
+
+/* Inicialmente la sección tiene opacidad 0 y no es visible */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Transición suave al hacer visible la sección */
+}
+
+/* Cuando la sección es visible, la opacidad cambia a 1 */
+.lazy-load.loaded {
+  opacity: 1;
 }
 
 /* General */
@@ -958,3 +987,4 @@ p {
     order: 2;
   }
 }
+
