@@ -91,6 +91,7 @@ button {
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .cta-button {
@@ -151,6 +152,7 @@ button {
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   border-right: 1px solid var(--secondary-text);
   transition: inherit;
+  z-index: 999;
 }
 
 /* Enlaces */
@@ -808,7 +810,14 @@ p {
     z-index: 999;
     transform: translateX(-100%);
     opacity: 0;
+    pointer-events: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navbar.show {
+    display: block;
+    pointer-events: auto; /* Activa interacciones */
+    opacity: 1;
   }
 
   .menu-toggle {
