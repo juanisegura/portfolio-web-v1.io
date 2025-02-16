@@ -68,7 +68,7 @@ button {
   background-color: var(--accent-color);
 }
 
-#theme-switch {
+#language-switch, #theme-switch {
   height: 47px;
   width: 47px;
   padding: 0;
@@ -78,14 +78,22 @@ button {
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 20px;
   left: 17px;
   transition: background-color 1.5s ease, color 1.5s ease, border-color 1.5s ease;
 }
 
-#theme-switch svg {
+#language-switch {
+  bottom: 70px; /* Arriba del botón de tema */
+}
+
+#theme-switch {
+  bottom: 20px;
+}
+
+#language-switch svg, #theme-switch svg {
   fill: var(--primary-color);
 }
+
 
 #theme-switch svg:last-child {
   display: none;
@@ -159,21 +167,6 @@ button {
   font-size: 1.8rem;
   cursor: pointer;
   display: none;
-}
-
-.language-selector {
-  margin-top: 1rem;
-}
-
-.language-selector label {
-  margin-right: 0.5rem;
-  font-weight: bold;
-}
-
-.language-selector select {
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid var(--secondary-text);
 }
 
 /* INICIO */
@@ -965,4 +958,3 @@ p {
     order: 2;
   }
 }
-
