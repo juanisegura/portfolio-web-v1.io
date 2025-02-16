@@ -2,7 +2,11 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
+   
     navLinks.classList.toggle('active');
+
+    
+    document.body.classList.toggle('active-nav');
 });
 
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -19,8 +23,10 @@ document.querySelectorAll('.nav-links a').forEach(link => {
             });
         }
 
+   
         if (window.innerWidth <= 768) {
             navLinks.classList.remove('active');
+            document.body.classList.remove('active-nav');
         }
     });
 });
