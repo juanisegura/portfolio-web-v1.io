@@ -59,19 +59,17 @@ html {
 }
 
 html, body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 11 */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 /*lazy load*/
 
-/* Inicialmente la sección tiene opacidad 0 y no es visible */
 .lazy-load {
   opacity: 0;
-  transition: opacity 1s ease-in-out; /* Transición suave al hacer visible la sección */
+  transition: opacity 1s ease-in-out; 
 }
 
-/* Cuando la sección es visible, la opacidad cambia a 1 */
 .lazy-load.loaded {
   opacity: 1;
 }
