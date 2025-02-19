@@ -100,6 +100,17 @@ button {
   background-color: var(--accent-color);
 }
 
+.hidden {
+  opacity: 0;
+  visibility: hidden; 
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+section {
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+
 #theme-switch {
   height: 47px;
   width: 47px;
@@ -124,13 +135,13 @@ button {
   justify-content: center;
   align-items: center;
   position: fixed;
-  right: 17px; /* Mueve el logo a la derecha */
-  top: 17px;   /* Coloca el logo en la parte superior */
+  right: 17px;
+  top: 17px;  
   transition: all 1.5s ease;
 }
 
 #language-switch {
-  bottom: 70px; /* Arriba del botón de tema */
+  bottom: 70px; 
 }
 
 #theme-switch {
@@ -228,6 +239,7 @@ button {
   text-align: center;
   padding: 2rem;
   background-color: var(--base-color);
+
   transition: all 1.5s ease;
 }
 
