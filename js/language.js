@@ -340,3 +340,33 @@ function cambiarIdioma() {
 
 // Evento de cambio de idioma en el botón
 document.getElementById("language-switch").addEventListener("click", cambiarIdioma);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const languageButton = document.getElementById("language-switch");
+    const languageIcon = document.getElementById("language-icon");
+    
+    // Idioma por defecto
+    let currentLanguage = localStorage.getItem("language") || "es";
+    
+    // Función para cambiar el idioma y la bandera
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === "es" ? "en" : "es";
+        localStorage.setItem("language", currentLanguage);
+
+        // Cambia la imagen del botón según el idioma
+        languageIcon.src = currentLanguage === "es" ? "./assets/language/argentina.svg" : "./assets/language/eeuu.png";
+        
+        // Llamar a las funciones de cambio de idioma en las distintas secciones
+        cambiarIdiomaSobreMi(currentLanguage);
+        cambiarIdiomaTecnologias(currentLanguage);
+        cambiarIdiomaProyectos(currentLanguage);
+        cambiarIdiomaEducacion(currentLanguage);
+    }
+
+    // Establecer la bandera inicial al cargar la página
+    languageIcon.src = currentLanguage === "es" ? "./assets/language/argentina.svg" : "./assets/language/eeuu.png";
+
+    // Agregar evento de clic al botón
+    languageButton.addEventListener("click", toggleLanguage);
+});
+
