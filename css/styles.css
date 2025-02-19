@@ -228,7 +228,6 @@ button {
   text-align: center;
   padding: 2rem;
   background-color: var(--base-color);
-  height: 100vh;
   transition: all 1.5s ease;
 }
 
