@@ -1,12 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Inicializa AOS
+
   AOS.init({
     duration: 1000,
     easing: "ease-in-out",
-    once: true,
+    once: false,
     mirror: false
   });
 
-  // Si el contenido es cargado dinámicamente, reinicia AOS
-  AOS.refresh(); 
+  AOS.refresh();
+
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("hidden"); 
+        entry.target.classList.add("aos-animate"); 
+        AOS.refresh(); 
+      } else {
+        entry.target.classList.add("hidden"); 
+        entry.target.classList.remove("aos-animate"); 
+      }
+    });
+  }, {
+    threshold: 0.2 
+  });
+
+  sections.forEach(section => {
+    section.classList.add("hidden");
+    observer.observe(section);
+  });
 });
